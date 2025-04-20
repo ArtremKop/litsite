@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Lithuania</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Embedded Styles -->
+  <style>
+    :root {
+      --primary: #006A44;
+      --accent: #C1272D;
+      --bg-start: #f0f4f8;
+      --bg-end: #d9e2ec;
+      --text: #333;
+      --heading: #222;
+      --transition: 0.3s ease;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { color: var(--primary); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--accent); }
+    img { max-width: 100%; display: block; border-radius: 0.5rem; }
+
+    /* ===== Header & Nav ===== */
+    header { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1em 0; background: rgba(255,255,255,0.6); }
+    .logo { font-size: 1.5em; font-weight: 700; color: var(--primary); }
+    .menu { list-style: none; display: flex; gap: 2em; }
+    .menu li a { font-weight: 500; padding: 0.5em; position: relative; }
+    .menu li a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width var(--transition); }
+    .menu li a:hover::after { width: 100%; }
+    .menu-toggle { display: none; }
+
+    /* ===== Hero ===== */
+    .hero {
+      background: url('hero-bg.jpg') center/cover no-repeat;
+      text-align: center;
+      padding: 8rem 1rem;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 0.5em; }
+    .hero p { font-size: 1.25rem; margin-bottom: 1em; }
+    .hero .subtext { font-size: 1rem; opacity: 0.9; }
+    .btn-primary {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 0.75em 1.5em;
+      background: var(--accent);
+      color: white;
+      border-radius: 2rem;
+      transition: background var(--transition);
+    }
+    .btn-primary:hover { background: #a11d24; }
+
+    /* ===== Section Styles ===== */
+    section { padding: 4rem 0; }
+    section:nth-of-type(even) { background: rgba(255,255,255,0.8); }
+    section .container { text-align: center; }
+    section h2 { color: var(--accent); font-size: 2.25rem; margin-bottom: 0.75em; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform var(--transition);
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card i { font-size: 2.5rem; margin-bottom: 0.5em; color: var(--primary); }
+    .card p { color: var(--text); }
+
+    /* ===== Contact Form ===== */
+    .contact-form { max-width: 500px; margin: 0 auto; text-align: left; }
+    .contact-form label { display: block; margin: 0.5em 0 0.2em; font-weight: 500; }
+    .contact-form input,
+    .contact-form textarea { width: 100%; padding: 0.75em; border: 1px solid #ccc; border-radius: 0.5rem; }
+    .contact-form button { margin-top: 1em; padding: 0.75em 1.5em; background: var(--primary); color: white; border: none; border-radius: 2rem; cursor: pointer; }
+    .contact-form button:hover { background: #005835; }
+
+    /* ===== Analysis section ===== */
+    .analysis-list { list-style: disc inside; max-width: 700px; margin: 1.5rem auto 0; text-align: left; color: var(--text); }
+
+    /* ===== Footer ===== */
+    footer { background: #222; color: #aaa; text-align: center; padding: 2rem 1rem; }
+    footer a { color: #aaa; }
+    footer a:hover { color: white; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1rem; }
+      .menu { display: none; }
+      .menu-toggle { display: block; font-size: 1.5em; cursor: pointer; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Discover Lithuania</div>
+        <i class="fas fa-bars menu-toggle"></i>
+        <ul class="menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#culture">Culture</a></li>
+          <li><a href="#tourism">Tourism</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero">
+        <div class="hero-content">
+          <h1>Discover the Baltic Gem</h1>
+          <p>Uncover Lithuania’s rich history and vibrant culture</p>
+          <p class="subtext">Join us on a journey from medieval castles to modern innovations across this enchanting land.</p>
+          <a href="#about" class="btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <h2>About Lithuania</h2>
+        <p>Lithuania is a country brimming with natural beauty, from lush forests to serene lakes. Its vibrant capital, Vilnius, hosts a mix of Gothic, Renaissance, and Baroque architecture.</p>
+        <div class="cards">
+          <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>Located in northeastern Europe, Lithuania is the largest and southernmost Baltic state.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-users"></i>
+            <p>Home to 2.6 million people, with Vilnius celebrated for its UNESCO-listed Old Town.</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-landmark"></i>
+            <p>A nation with deep historical roots, from the Grand Duchy to modern independence.</p>
+          </div>
+        </div>
+        <img src="oldtown.jpg" alt="Vilnius Old Town" />
+      </div>
+    </section>
+
+    <section id="history">
+      <div class="container">
+        <h2>History</h2>
+        <p>The story of Lithuania spans centuries, from pagan tribes to one of Europe’s most powerful duchies, to a resilient modern nation.</p>
+        <div class="cards">
+          <div class="card">
+            <p>14th–16th centuries: Grand Duchy era, one of Europe’s largest states.</p>
+          </div>
+          <div class="card">
+            <p>20th century: Soviet occupation and the 1990 independence movement.</p>
+          </div>
+        </div>
+        <img src="Trakai-Island-Castle-Lake-Galve-Trakai-Lithuania.jpg" alt="Trakai Castle" />
+      </div>
+    </section>
+
+    <section id="culture">
+      <div class="container">
+        <h2>Culture</h2>
+        <p>Lithuania boasts a rich cultural tapestry: ancient folklore, vibrant festivals, and a thriving arts scene fueled by centuries-old traditions.</p>
+        <div class="cards">
+          <div class="card">
+            <p>Lithuanian language: one of the oldest living Indo-European languages.</p>
+          </div>
+          <div class="card">
+            <p>Basketball: national sport and cultural phenomenon.</p>
+          </div>
+        </div>
+        <img src="cep.jpg" alt="Cepelinai dish" />
+      </div>
+    </section>
+
+    <section id="tourism">
+      <div class="container">
+        <h2>Tourism</h2>
+        <p>Whether you seek golden dunes, medieval castles, or urban nightlife, Lithuania delivers an unforgettable experience.</p>
+        <div class="cards">
+          <div class="card">
+            <p>Curonian Spit: UNESCO World Heritage site with sand dunes.</p>
+          </div>
+          <div class="card">
+            <p>Kernavė Archaeological Site: Lithuania’s medieval capital.</p>
+          </div>
+        </div>
+        <img src="image2.jpg" alt="Curonian Spit dunes" />
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>Have questions or need more info? Drop us a message!</p>
+        <form class="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your Name">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com">
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="Your message here..."></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Discover Lithuania by Artem Kopach | <a href="#contact">Contact Us</a></p>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    toggle.addEventListener('click', () => {
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+      menu.style.flexDirection = 'column';
+    });
+  </script>
+</body>
+</html>
