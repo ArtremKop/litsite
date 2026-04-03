@@ -1,0 +1,7 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "no-referrer"
+    Content-Security-Policy = "default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' https://kit.fontawesome.com; img-src 'self' data:; object-src 'none'; base-uri 'self'"
