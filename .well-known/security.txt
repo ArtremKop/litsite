@@ -1,2 +1,7 @@
-Contact: mailto:your@email.com
-Expires: 2027-01-01T00:00:00.000Z
+# Discover Lithuania security.txt
+# https://securitytxt.org/
+
+Contact: mailto:твой_реальный_email@example.com
+Expires: 2027-04-03T14:00:00.000Z
+Canonical: https://artremkop.github.io/litsite/.well-known/security.txt
+Preferred-Languages: en, ru
